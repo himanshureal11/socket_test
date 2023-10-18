@@ -30,9 +30,8 @@ const listen = () => {
             
         });
         global.socketIO.on('connection', (socket) => {
-            socket.emit('isConnect', "connected");
-            socket.on('test-data', ( message) => {
-                global.socketIO.sockets.emit('test-data', message);
+            socket.on('test-data',(message, arg2) => {
+                global.socketIO.sockets.emit(message, arg2);
             });
         });
     } catch (error) {
