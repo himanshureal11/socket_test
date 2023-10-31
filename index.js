@@ -31,7 +31,7 @@ const listen = () => {
         });
         global.socketIO.on('connection', (socket) => {
             socket.on('test-data',(message, arg2) => {
-                console.log(">>>", message, arg2);
+                // console.log(">>>", message, arg2);
                 global.socketIO.sockets.emit(message, arg2);
             });
         });
